@@ -24,6 +24,5 @@
         "src": "/(.*)",
         "dest": "new/wsgi.py"
       }
-    ],
-    "outputDirectory": "staticfiles_build"
+    ]
   }
