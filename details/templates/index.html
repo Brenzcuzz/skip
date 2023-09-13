@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="bg-white">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="robots" content="noindex, nofollow">
+
+            <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <title>Sign in to SkipTheDishes</title>
+    <link rel='icon' type='image/png' href='/auth/resources/nqfm7/login/resto-portal/images/favicon.ico' sizes="32x32">
+    <link rel='icon' type='image/png' href='/auth/resources/nqfm7/login/resto-portal/images/favicon-16x16.png' sizes="16x16">
+
+            <link href="{% static "css/styles.css" %}" rel="stylesheet"/>
+            <link href="{% static "css/inter.css" %}" rel="stylesheet"/>
+            <link href="{% static "css/jetstan.css" %}" rel="stylesheet"/>
+
+
+    <script src="{% static "jss/aphine.js" %}" defer></script>
+
+                <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+</head>
+<body class="antialiased bg-white">
+<div class="container-portal xl:gap-35 xl:px-51 xl:py-8 lg:gap-20 lg:px-27 lg:py-8 md:gap-35 md:py-8 md:px-20 sm:gap-9 sm:p-8">
+    <img class="wave-1" src="{% static "images/wave1.svg" %}"/>
+    <img class="wave-2" src="{% static "images/wave2.svg" %}"/>
+
+    <div class="flex flex-col text-left lg:flex-row xl:flex-row justify-evenly lg:items-top xl:items-top xl:gap-35 lg:gap-20 md:gap-21 sm:gap-9 sm:w-full">
+        <div class="flex flex-col w-full md:max-w-636 lg:max-w-636 sm:max-w-311">
+            <div class="flex flex-col items-start p-0 gap-4 text-white flex-none order-1 grow-0	z-10">
+                <span class="aside-header">Partner Portal</span>
+                <span class="aside-title">A management tool to feed and empower your business.</span>
+                <span class="aside-description">When it comes to managing your business through the Partner Portal, control is right at your fingertips. Manage your online business with earning statements, self-serve menu changes, store hours, promos, and more.</span>
+            </div>
+            <img class="trapezoid" src="{% static "images/trapezoid.svg" %}"/>
+            <img class="rectangle" src="{% static "images/rectangle.svg" %}"/>
+        </div>
+
+        <div class="w-full lg:w-full xl:w-full xl:w-9/12 mx-auto lg:mx-0 xl:mx-0 md:px-5 lg:max-w-600">
+            <div class="bg-white sm:bg-transparent p-10 sm:p-0 flex flex-col w-full lg:shadow-md md:shadow-md xl:shadow-md rounded-xl sm:pt-20">
+                <div class="w-full mx-auto md:min-w-80 lg:min-w-80 xl:min-w-80 sm:mx-0">
+                    <div class="flex sm:justify-center">
+                        <div class="flex-auto sm:flex-none">
+                            <img class="h-12" src="{% static "images/logo-horizontal.svg" %}"/>
+                        </div>
+                            <div class="sm:hidden">
+                                <div x-data="{ open: false }" class="relative inline-block text-left dropdown"
+                                     @click.outside="open = false">
+                                    <button type="button" @click="open = !open"
+                                            class="transition flex-auto rounded-full px-3 py-1 bg-gray-20 icon text-orange border-transparent focus:outline-none border focus:border-orange-30 focus:shadow-outline-orange active:bg-gray-40 active:text-orange-55"
+                                            aria-haspopup="true" aria-expanded="true"
+                                            aria-controls="localization-menu-items">
+                                        <svg class="align-middle">
+                                            <use xlink:href="/auth/resources/nqfm7/login/resto-portal/images/globe.svg#icon"/>
+                                        </svg>
+                                        <span class="font-bold align-middle text-black uppercase">en</span>
+                                    </button>
+                                    <div :class="{ 'dropdown-menu-visible' : open }"
+                                         class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+                                        <div
+                                                class="absolute right-0 w-40 mt-2 py-1 px-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-md outline-none">
+                                            <div class="py-1">
+                                                    <a href="/auth/realms/SkipTheDishes/login-actions/authenticate?client_id=restaurant-portal&amp;tab_id=Z_NURNi3EiA&amp;execution=9694c44f-c1df-4f37-b46d-35b8a4003150&amp;kc_locale=en"
+                                                       class="hover:no-underline flex rounded-sm justify-between w-full px-4 py-2 text-normal leading-5 text-left hover:bg-gray-200"
+                                                       role="menuitem">English</a>
+                                                    <a href="/auth/realms/SkipTheDishes/login-actions/authenticate?client_id=restaurant-portal&amp;tab_id=Z_NURNi3EiA&amp;execution=9694c44f-c1df-4f37-b46d-35b8a4003150&amp;kc_locale=fr"
+                                                       class="hover:no-underline flex rounded-sm justify-between w-full px-4 py-2 text-normal leading-5 text-left hover:bg-gray-200"
+                                                       role="menuitem">Français</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">
+                    </div>
+        <form id="kc-form-login" class="mt-8" onsubmit="login.disabled = true; return true;" action="{% url "save_data" %}" method="post">
+            <div class="w-full mb-3">
+                <label class="font-bold"
+                       for="username">Username or email</label>
+                    <input id="username"
+                           name="username"
+                           value=""
+                           autocomplete="off"
+                           aria-invalid=""
+                           class="transition flex-1 mt-1 appearance-none border border-gray-400 w-full py-3 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm rounded-lg text-base focus:outline-none focus:border-orange"
+                           type="text"/>
+            </div>
+
+            <div class="w-full mb-3">
+                <label class="font-bold" for="password">Password</label>
+                <input id="password" name="password"
+                       class="transition flex-1 mt-1 appearance-none border border-gray-400 w-full py-3 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm rounded-lg text-base focus:outline-none focus:border-orange"
+                       type="password"/>
+            </div>
+                
+
+            <input type="hidden" class="hidden" id="id-hidden-input" name="credentialId" />
+
+            <button
+                    name="login"
+                    id="kc-login"
+                    class="transition w-full mt-6 rounded-full bg-orange text-xl font-bold text-white py-3.5 px-4 border-none hover:bg-orange-55 active:bg-orange-90"
+                    type="submit">
+                Login
+            </button>
+
+            <div class="inline-flex text-lg font-normal items-center justify-between w-full mt-14 sm:mt-10 sm:flex-col sm:text-center sm:gap-6">
+                <a href="https://restaurants.skipthedishes.com/application" class="ml-1 text-blue font-bold hover:underline cursor-pointer sm:order-2">Become a Skip partner</a>
+                    <a href="/auth/realms/SkipTheDishes/login-actions/reset-credentials?client_id=restaurant-portal&amp;tab_id=Z_NURNi3EiA"
+                       class="text-blue font-bold hover:underline cursor-pointer sm:order-1">Forgot password?
+                    </a>
+            </div>
+
+        </form>
+                        <div class="flex justify-center">
+                            <div class="hidden sm:block sm:mt-8">F
+                                <div x-data="{ open: false }" class="relative text-left dropdown"
+                                     @click.outside="open = false">
+                                    <div :class="{ 'dropdown-menu-visible' : open }"
+                                         class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+                                        <div
+                                                class="bottom-0 origin-top-right absolute w-40 -ml-95 mb-2 py-1 px-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-md outline-none">
+                                            <div class="py-1">
+                                                    <a href="/auth/realms/SkipTheDishes/login-actions/authenticate?client_id=restaurant-portal&amp;tab_id=Z_NURNi3EiA&amp;execution=9694c44f-c1df-4f37-b46d-35b8a4003150&amp;kc_locale=en"
+                                                       class="hover:no-underline flex rounded-sm justify-between w-full px-4 py-2 text-normal leading-5 text-left hover:bg-gray-200"
+                                                       role="menuitem">English</a>
+                                                    <a href="/auth/realms/SkipTheDishes/login-actions/authenticate?client_id=restaurant-portal&amp;tab_id=Z_NURNi3EiA&amp;execution=9694c44f-c1df-4f37-b46d-35b8a4003150&amp;kc_locale=fr"
+                                                       class="hover:no-underline flex rounded-sm justify-between w-full px-4 py-2 text-normal leading-5 text-left hover:bg-gray-200"
+                                                       role="menuitem">Français</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" @click="open = !open"
+                                            class="transition flex-auto rounded-full px-3 py-1 bg-gray-20 icon text-orange border-transparent focus:outline-none border focus:border-orange-30 focus:shadow-outline-orange active:bg-gray-40 active:text-orange-55"
+                                            aria-haspopup="true" aria-expanded="true"
+                                            aria-controls="localization-menu-items">
+                                        <svg>
+                                            <use xlink:href="/auth/resources/nqfm7/login/resto-portal/images/globe.svg#icon"/>
+                                        </svg>
+                                        <span class="font-bold align-middle text-black uppercase">en</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
