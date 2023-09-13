@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "JETSansDigital";
+    font-weight: 400;
+    font-style: normal;
+    src: url("JETSansDigital-Regular-optimised.woff") format("woff"),
+      url("JETSansDigital-Regular-optimised.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "JETSansDigital";
+    font-weight: 700;
+    font-style: normal;
+    src: url("JETSansDigital-Bold-optimised.woff") format("woff"),
+      url("JETSansDigital-Bold-optimised.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: "JETSansDigital";
+    font-weight: 800;
+    font-style: normal;
+    src: url("JETSansDigital-ExtraBold-optimised.woff") format("woff"),
+      url("JETSansDigital-ExtraBold-optimised.woff2") format("woff2");
+  }
+  
