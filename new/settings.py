@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7um(b%rmtnhdxa$t(w%$@4=s=(fw!v#@+paav%*!zbx$6n(lbq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -139,5 +139,13 @@ STATICFILES_FINDERS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'karenfurst66@outlook.com'
+EMAIL_HOST_PASSWORD = 'Ladenposse3'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
